@@ -39,7 +39,7 @@ header #logo button{
            a dla przycisków = width: 100%; */
 
 header #headerimg {
-    width: 25%;
+    width: 100%;
     height: auto;
     z-index: 4;
 }
@@ -63,7 +63,7 @@ header #headerimg {
 
 /* lista z odnosnikami do podstron */
 
-header nav ul {
+/* header nav ul {
     list-style-type: none;
     display: flex;
 }
@@ -73,32 +73,25 @@ header nav ul li {
 }
 
 header nav ul li a {
-    background: none;
-    border: 2px solid #4CAF50;
-    color: #4CAF50;
-    padding: 10px 20px;
-    font-size: 18px;
+    color: white;
     text-decoration: none;
-    cursor: pointer;
-    text-transform: uppercase;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 16px;
+    transition: color 0.3s ease;
 }
 
 header nav ul li a:hover {
-    background-color: #4CAF50;
-    color: white;
+    color: #FFD700;
 }
 
 header nav ul li a img {
     width: 50%;
-}
+} */
 
 
 
 /* przyciski pokazujące sekcje */
 
-/* #nav-buttons {
+#nav-buttons {
     display: flex;
     gap: 20px;
 }
@@ -118,7 +111,7 @@ header nav ul li a img {
 .nav-btn:hover {
     background-color: #4CAF50;
     color: white;
-} */
+}
 
 
 
@@ -433,6 +426,10 @@ footer {
 @media (max-width: 900px) {
 
     /* lista z odnośnikami do podstron */
+    /* header nav ul {
+        display: none;
+    }
+    
     header nav ul {
         display: none;
     }
@@ -457,15 +454,10 @@ footer {
         border: none;
     }
 
-    #menu {
-        display: flex;
-        cursor: pointer;
-    }
-
 
     /* przyciski od sekcji */
 
-    /* #nav-buttons {
+    #nav-buttons {
         display: none;
         flex-direction: column;
         width: 100%;
@@ -484,13 +476,13 @@ footer {
     }
 
     .nav-btn {
-        width: 90%;
+        width: 100%;
         padding: 15px;
         text-align: center;
         background-color: #333;
         border: none;
         color: white;
-    } */
+    }
 
     .main h1 {
         font-size: 30px;
@@ -527,11 +519,11 @@ footer {
 
 section {
     min-height: 75vh;
-    /* opacity: 0;
-    transition: opacity 0.5s ease; */
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
-/* section.active {
+section.active {
     opacity: 1;
 }
 
@@ -539,4 +531,4 @@ section.hidden {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.5s ease;
-} */
+}

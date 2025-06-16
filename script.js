@@ -1,14 +1,14 @@
 
 // do listy z odnośnikami do podstron
 
-document.getElementById('menu').addEventListener('click', function() {
-    const nav = document.querySelector('header nav ul');
-    nav.classList.toggle('lista');
-});
+// document.getElementById('menu').addEventListener('click', function() {
+//     const nav = document.querySelector('header nav ul');
+//     nav.classList.toggle('lista');
+// });
 
 
 
-// do przycisków pokazujących sekcje (poprzednie)
+// do przycisków pokazujących sekcje
 
 // const menuButton = document.getElementById('menu');
 // const navButtons = document.getElementById('nav-buttons');
@@ -19,35 +19,32 @@ document.getElementById('menu').addEventListener('click', function() {
 //     navButtons.classList.toggle('menu-open');
 // });
 
+const menuButton = document.getElementById('menu');
+const navButtons = document.getElementById('nav-buttons');
+const navBtnList = navButtons.querySelectorAll('button');
 
-// // lepsze menu burger do przycisków
-//
-// const menuButton = document.getElementById('menu');
-// const navButtons = document.getElementById('nav-buttons');
-// const navBtnList = navButtons.querySelectorAll('button');
+// Kliknięcie w przycisk menu burgerowego
+menuButton.addEventListener('click', function (event) {
+    event.stopPropagation(); // Nie zamykaj od razu
+    navButtons.classList.toggle('menu-open');
+});
 
-// // Kliknięcie w przycisk menu burgerowego
-// menuButton.addEventListener('click', function (event) {
-//     event.stopPropagation(); // Nie zamykaj od razu
-//     navButtons.classList.toggle('menu-open');
-// });
+// Kliknięcie poza menu lub burgerem — zamknij
+document.addEventListener('click', function (event) {
+    const isClickInsideMenu = navButtons.contains(event.target);
+    const isClickOnButton = menuButton.contains(event.target);
 
-// // Kliknięcie poza menu lub burgerem — zamknij
-// document.addEventListener('click', function (event) {
-//     const isClickInsideMenu = navButtons.contains(event.target);
-//     const isClickOnButton = menuButton.contains(event.target);
+    if (!isClickInsideMenu && !isClickOnButton) {
+        navButtons.classList.remove('menu-open');
+    }
+});
 
-//     if (!isClickInsideMenu && !isClickOnButton) {
-//         navButtons.classList.remove('menu-open');
-//     }
-// });
-
-// // Kliknięcie w którykolwiek z przycisków w menu — zamknij menu
-// navBtnList.forEach(button => {
-//     button.addEventListener('click', () => {
-//         navButtons.classList.remove('menu-open');
-//     });
-// });
+// Kliknięcie w którykolwiek z przycisków w menu — zamknij menu
+navBtnList.forEach(button => {
+    button.addEventListener('click', () => {
+        navButtons.classList.remove('menu-open');
+    });
+});
 
 
 const images = [
@@ -100,73 +97,73 @@ backgroundLayer1.style.backgroundImage = `url(${images[currentImageIndex]})`;
 
 // dla odnośników zakomentować poniższy skrypt
 
-// // Funkcja do pokazania sekcji atrakcje
-// function showAttractions() {
-//     // Ukryj sekcję aktywną
-//     document.querySelector('.active').style="display: none;";
-//     document.querySelector('.active').classList.remove('active');
-//     // Pokaż sekcję atrakcji
-//     document.querySelector('#attractions').style="display: block;";
-//     document.querySelector('#attractions').classList.add('active');
-// }
+// Funkcja do pokazania sekcji atrakcje
+function showAttractions() {
+    // Ukryj sekcję aktywną
+    document.querySelector('.active').style="display: none;";
+    document.querySelector('.active').classList.remove('active');
+    // Pokaż sekcję atrakcji
+    document.querySelector('#attractions').style="display: block;";
+    document.querySelector('#attractions').classList.add('active');
+}
 
-// // Funkcja do pokazania sekcji głównej
-// function showMain() {
-//     // Ukryj sekcję aktywną
-//     document.querySelector('.active').style="display: none;";
-//     document.querySelector('.active').classList.remove('active');
-//     // Pokaż sekcję główną
-//     document.querySelector('#main').style="display: block;";
-//     document.querySelector('#main').classList.add('active');
-// }
+// Funkcja do pokazania sekcji głównej
+function showMain() {
+    // Ukryj sekcję aktywną
+    document.querySelector('.active').style="display: none;";
+    document.querySelector('.active').classList.remove('active');
+    // Pokaż sekcję główną
+    document.querySelector('#main').style="display: block;";
+    document.querySelector('#main').classList.add('active');
+}
 
-// // Funkcja do pokazania sekcji cennika
-// function showCosts() {
-//     // Ukryj sekcję aktywną
-//     document.querySelector('.active').style="display: none;";
-//     document.querySelector('.active').classList.remove('active');
-//     // Pokaż sekcję cennika
-//     document.querySelector('#costs').style="display: block;";
-//     document.querySelector('#costs').classList.add('active');
-// }
+// Funkcja do pokazania sekcji cennika
+function showCosts() {
+    // Ukryj sekcję aktywną
+    document.querySelector('.active').style="display: none;";
+    document.querySelector('.active').classList.remove('active');
+    // Pokaż sekcję cennika
+    document.querySelector('#costs').style="display: block;";
+    document.querySelector('#costs').classList.add('active');
+}
 
-// // Funkcja do pokazania sekcji galerii
-// function showGallery() {
-//     // Ukryj sekcję aktywną
-//     document.querySelector('.active').style="display: none;";
-//     document.querySelector('.active').classList.remove('active');
-//     // Pokaż sekcję galerii
-//     document.querySelector('#gallery').style="display: block;";
-//     document.querySelector('#gallery').classList.add('active');
-// }
+// Funkcja do pokazania sekcji galerii
+function showGallery() {
+    // Ukryj sekcję aktywną
+    document.querySelector('.active').style="display: none;";
+    document.querySelector('.active').classList.remove('active');
+    // Pokaż sekcję galerii
+    document.querySelector('#gallery').style="display: block;";
+    document.querySelector('#gallery').classList.add('active');
+}
 
-// // Funkcja do pokazania sekcji kontakt
-// function showContact() {
-//     // Ukryj sekcję aktywną
-//     document.querySelector('.active').style="display: none;";
-//     document.querySelector('.active').classList.remove('active');
-//     // Pokaż sekcję kontakt
-//     document.querySelector('#contact').style="display: block;";
-//     document.querySelector('#contact').classList.add('active');
-// }
+// Funkcja do pokazania sekcji kontakt
+function showContact() {
+    // Ukryj sekcję aktywną
+    document.querySelector('.active').style="display: none;";
+    document.querySelector('.active').classList.remove('active');
+    // Pokaż sekcję kontakt
+    document.querySelector('#contact').style="display: block;";
+    document.querySelector('#contact').classList.add('active');
+}
 
-// // Funkcja do pokazania sekcji regulamin
-// function showRules() {
-//     // Ukryj sekcję aktywną
-//     document.querySelector('.active').style="display: none;";
-//     document.querySelector('.active').classList.remove('active');
-//     // Pokaż sekcję regulamin
-//     document.querySelector('#rules').style="display: block;";
-//     document.querySelector('#rules').classList.add('active');
-// }
+// Funkcja do pokazania sekcji regulamin
+function showRules() {
+    // Ukryj sekcję aktywną
+    document.querySelector('.active').style="display: none;";
+    document.querySelector('.active').classList.remove('active');
+    // Pokaż sekcję regulamin
+    document.querySelector('#rules').style="display: block;";
+    document.querySelector('#rules').classList.add('active');
+}
 
-// // Na początku pokazana sekcja główna, reszta ukryta
-// document.querySelector('#main').classList.add('active');
-// document.querySelector('#attractions').style="display: none;";
-// document.querySelector('#costs').style="display: none;";
-// document.querySelector('#gallery').style="display: none;";
-// document.querySelector('#contact').style="display: none;";
-// document.querySelector('#rules').style="display: none;";
+// Na początku pokazana sekcja główna, reszta ukryta
+document.querySelector('#main').classList.add('active');
+document.querySelector('#attractions').style="display: none;";
+document.querySelector('#costs').style="display: none;";
+document.querySelector('#gallery').style="display: none;";
+document.querySelector('#contact').style="display: none;";
+document.querySelector('#rules').style="display: none;";
 
 
 
