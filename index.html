@@ -9,12 +9,15 @@
 </head>
 <body>
     <header>
+        <!-- Odnośniki do strony głównej i podstron -->
+
         <div id="logo">
-            <button onclick="showMain()">
+            <a href="index.html">
                 <img src="img/logo.png" alt="Spokój z Widokiem" id="headerimg">
-            </button>
+            </a>
         </div>
-        <!-- <nav>
+
+        <nav>
             <ul>
                 <li><a href="atrakcje.html">Atrakcje</a></li>
                 <li><a href="cennik.html">Cennik</a></li>
@@ -22,14 +25,26 @@
                 <li><a href="kontakt.html">Kontakt</a></li>
                 <li><a href="regulamin.html">Regulamin</a></li>
             </ul>
-        </nav> -->
+        </nav>
+
+
+        <!-- Przyciski pokazujące sekcje-->
+
+        <!-- <div id="logo">
+            <button onclick="showMain()">
+                <img src="img/logo.png" alt="Spokój z Widokiem" id="headerimg">
+            </button>
+        </div>
+
         <div id="nav-buttons">
             <button class="nav-btn" onclick="showAttractions()">Atrakcje</button>
-            <button class="nav-btn" onclick="">Cennik</button>
-            <button class="nav-btn" onclick="">Galeria</button>
-            <button class="nav-btn" onclick="">Kontakt</button>
-            <button class="nav-btn" onclick="">Regulamin</button>
-        </div>
+            <button class="nav-btn" onclick="showCosts()">Cennik</button>
+            <button class="nav-btn" onclick="showGallery()">Galeria</button>
+            <button class="nav-btn" onclick="showContact()">Kontakt</button>
+            <button class="nav-btn" onclick="showRules()">Regulamin</button>
+        </div> -->
+
+
         <div class="menu" id="menu">
             <span></span>
             <span></span>
@@ -65,8 +80,8 @@
         </div>
     </section>
 
-    <section id="attractions">
-        <h1>Atrakcje</h1>
+    <!-- <section id="attractions">
+        <h1 class="h1title">Atrakcje</h1>
         <div id="attraction-list">
             <div class="attraction-item">
                 <h3>Kościół św. Jana Chrzciciela</h3>
@@ -112,6 +127,125 @@
             </div>
         </div>
     </section>
+
+    <section id="costs">
+        <h1 class="h1title">Cennik</h1>
+        <div id="cost-table">
+            <div class="cost-item">
+                <h3>Domek 2-osobowy</h3>
+                <p class="price">od 200 zł / noc</p>
+                <ul>
+                    <li>1 sypialnia</li>
+                    <li>Aneks kuchenny</li>
+                    <li>Łazienka</li>
+                    <li>Wi-Fi</li>
+                </ul>
+            </div>
+
+            <div class="cost-item">
+                <h3>Domek 3-osobowy</h3>
+                <p class="price">od 250 zł / noc</p>
+                <ul>
+                    <li>1 sypialnia + salon</li>
+                    <li>Łazienka</li>
+                    <li>Mini kuchnia</li>
+                    <li>Wi-Fi</li>
+                </ul>
+            </div>
+
+            <div class="cost-item">
+                <h3>Domek 4-osobowy</h3>
+                <p class="price">od 300 zł / noc</p>
+                <ul>
+                    <li>Łazienka</li>
+                    <li>Aneks kuchenny</li>
+                    <li>Wi-Fi</li>
+                </ul>
+            </div>
+
+            <div class="cost-item">
+                <h3>Domek 5-osobowy</h3>
+                <p class="price">od 350 zł / noc</p>
+                <ul>
+                    <li>2 sypialnie</li>
+                    <li>Aneks kuchenny</li>
+                    <li>Łazienka</li>
+                    <li>Balkon</li>
+                    <li>Wi-Fi</li>
+                </ul>
+            </div>
+
+            <div class="cost-item">
+                <h3>Domek 6-osobowy</h3>
+                <p class="price">od 400 zł / noc</p>
+                <ul>
+                    <li>Łazienka</li>
+                    <li>Kuchnia z wyposażeniem</li>
+                    <li>Kominek</li>
+                    <li>Wi-Fi</li>
+                </ul>
+            </div>
+
+            <div class="cost-item">
+                <h3>Domek 7-osobowy</h3>
+                <p class="price">od 450 zł / noc</p>
+                <ul>
+                    <li>2 sypialnie</li>
+                    <li>Salon z aneksem kuchennym</li>
+                    <li>Łazienka z prysznicem</li>
+                    <li>Wi-Fi</li>
+                </ul>
+            </div>
+
+
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h1 class="h1title">Galeria</h1>
+        <div id="gallery-wrapper">
+            <button id="prev" class="gallery-btn">◀</button>
+            
+            <img id="galleryImage" src="galeria/jpg/1.jpg" alt="Galeria" />
+
+            <button id="next" class="gallery-btn">▶</button>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h1 class="h1title">Kontakt</h1>
+        <div id="contact-info">
+            <p><strong>Telefon:</strong> <a href="tel:601245514">601 245 514</a></p>
+            <p><strong>Email:</strong> <a href="mailto:kontakt@spokojzwidokiem.pl">kontakt@spokojzwidokiem.pl</a></p>
+        </div>
+    </section>
+
+    <section id="rules">
+        <h1 class="h1title">Regulamin Obiektu „Spokój z Widokiem”</h1>
+        <div class="rules-content">
+            <p>W trosce o Państwa komfort i bezpieczeństwo, prosimy o zapoznanie się z poniższym regulaminem. Pobyt w naszym obiekcie oznacza jego akceptację.</p>
+
+            <ul>
+            <li>Doba pobytowa zaczyna się o godz. <strong>14:00</strong> w dniu przyjazdu i kończy o godz. <strong>10:00</strong> w dniu wyjazdu.</li>
+            <li>Rezerwacja jest ważna po wpłaceniu zadatku na podane konto bankowe.</li>
+            <li>Opłata za cały pobyt regulowana jest w dniu przyjazdu.</li>
+            <li>W przypadku wcześniejszego wyjazdu, należność za niewykorzystane dni nie podlega zwrotowi.</li>
+            <li>Na terenie obiektu mogą przebywać wyłącznie osoby zgłoszone i opłacone.</li>
+            <li>Goście są zobowiązani do utrzymania porządku i przestrzegania zasad współżycia społecznego.</li>
+            <li>Cisza nocna obowiązuje w godzinach <strong>22:00 – 6:00</strong>.</li>
+            <li>Dzieci mogą przebywać na terenie obiektu wyłącznie pod opieką dorosłych.</li>
+            <li>Za szkody wyrządzone na terenie obiektu odpowiada osoba wynajmująca domek.</li>
+            <li>Obiekt nie ponosi odpowiedzialności za rzeczy pozostawione bez nadzoru oraz za pojazdy pozostawione na parkingu.</li>
+            <li>Zakazuje się palenia tytoniu wewnątrz domków i pomieszczeń wspólnych.</li>
+            <li>Zwierzęta nie są akceptowane bez wcześniejszego uzgodnienia z właścicielem.</li>
+            <li>Plac zabaw dostępny jest wyłącznie dla dzieci pod nadzorem opiekunów.</li>
+            <li>Wszelkie usterki techniczne prosimy niezwłocznie zgłaszać właścicielowi.</li>
+            </ul>
+
+            <p>Dziękujemy za przestrzeganie zasad – życzymy przyjemnego wypoczynku!</p>
+        </div>
+    </section> -->
+
 
     <footer>
         <p>&copy; 2025 Spokój z Widokiem.</p>
